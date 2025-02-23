@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu - Dojin Luxury</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/SanPham/CSS/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Dojin Luxury</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Thêm form tìm kiếm -->
+                <form class="d-flex me-auto ms-4">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search" style="min-width: 300px;">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Danh mục
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Túi xách tay</a></li>
+                            <li><a class="dropdown-item" href="#">Túi đeo chéo</a></li>
+                            <li><a class="dropdown-item" href="#">Túi đeo vai</a></li>
+                            <li><a class="dropdown-item" href="#">Balo</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/SanPham/HTML/user/gioithieu.html">Giới thiệu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/SanPham/HTML/user/lienhe.html">Liên hệ</a></li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <!-- Thêm nút tra cứu đơn hàng -->
+                    <button type="button" class="btn btn-outline-dark me-2" data-bs-toggle="modal" data-bs-target="#orderTrackingModal">
+                        <i class="fas fa-truck me-1"></i> Tra cứu đơn hàng
+                    </button>
+
+                    <a href="#" class="btn btn-outline-dark me-2 position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                        </span>
+                    </a>
+                    <div class="dropdown me-3">
+                        <a class="btn btn-outline-dark dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user"></i> Nguyễn Văn A
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i>Tài khoản</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-history me-2"></i>Lịch sử mua hàng</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                    <!-- Thay thế phần này bằng nút đăng nhập khi chưa đăng nhập -->
+                    <!-- <a href="#" class="btn btn-primary">Đăng nhập</a> -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modal Tra cứu đơn hàng -->
+    <div class="modal fade" id="orderTrackingModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tra cứu đơn hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="orderNumber" class="form-label">Mã đơn hàng</label>
+                            <input type="text" class="form-control" id="orderNumber" placeholder="Nhập mã đơn hàng của bạn">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">Số điện thoại</label>
+                            <input type="tel" class="form-control" id="phoneNumber" placeholder="Nhập số điện thoại đặt hàng">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Tra cứu</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Thêm Modal Giỏ hàng trước footer -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Giỏ hàng của bạn</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Danh sách sản phẩm trong giỏ -->
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Sản phẩm</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Tổng</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img src="/SanPham/img/1.jpg" alt="Túi xách" style="width: 50px; height: 50px; object-fit: cover" class="me-2">
+                                            <span>Túi xách thời trang</span>
+                                        </div>
+                                    </td>
+                                    <td>1,200,000đ</td>
+                                    <td>
+                                        <div class="input-group" style="width: 120px">
+                                            <button class="btn btn-outline-secondary btn-sm">-</button>
+                                            <input type="text" class="form-control text-center" value="1">
+                                            <button class="btn btn-outline-secondary btn-sm">+</button>
+                                        </div>
+                                    </td>
+                                    <td>1,200,000đ</td>
+                                    <td>
+                                        <button class="btn btn-outline-danger btn-sm">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Tổng tiền -->
+                    <div class="d-flex justify-content-end">
+                        <div class="text-end">
+                            <p class="mb-2">Tạm tính: <strong>1,200,000đ</strong></p>
+                            <p class="mb-2">Phí vận chuyển: <strong>30,000đ</strong></p>
+                            <h5>Tổng cộng: <span class="text-danger">1,230,000đ</span></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tiếp tục mua sắm</button>
+                    <a href="/SanPham/HTML/user/checkout.html" class="btn btn-primary">Tiến hành thanh toán</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Content -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <h2 class="border-bottom pb-3 mb-4">Về Dojin Luxury</h2>
+                <p class="lead">Chào mừng bạn đến với Dojin Luxury - Nơi mang đến những sản phẩm túi xách cao cấp và thời trang nhất.</p>
+                <p>Được thành lập từ năm 2020, Dojin Luxury tự hào là địa chỉ tin cậy cho những người yêu thích thời trang và đam mê phụ kiện cao cấp. Chúng tôi cam kết mang đến cho khách hàng:</p>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check text-success me-2"></i>Sản phẩm chính hãng 100%</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Dịch vụ chăm sóc khách hàng tận tâm</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Chính sách bảo hành rõ ràng</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Giá cả cạnh tranh</li>
+                </ul>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <img src="/SanPham/img/store.jpg" alt="Cửa hàng Dojin Luxury" class="img-fluid rounded shadow">
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-medal fa-3x text-primary mb-3"></i>
+                        <h4>Chất Lượng</h4>
+                        <p>Cam kết chỉ cung cấp những sản phẩm chính hãng với chất lượng tốt nhất</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-hand-holding-heart fa-3x text-primary mb-3"></i>
+                        <h4>Dịch Vụ</h4>
+                        <p>Đội ngũ nhân viên chuyên nghiệp, tận tâm phục vụ khách hàng</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-sync fa-3x text-primary mb-3"></i>
+                        <h4>Bảo Hành</h4>
+                        <p>Chính sách bảo hành và đổi trả linh hoạt trong vòng 30 ngày</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copy footer từ index.html -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
